@@ -20,7 +20,7 @@ textarea {
 
 .listContainer  {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
@@ -29,11 +29,39 @@ textarea {
     display: flex;
     flex-direction: row;
     width: 70vw;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     margin-top: 1rem;
-    background-color: hsl(0, 0%, 96%);
+    background-color: hsl(0, 0%, 98%);
     border-radius: 5px;
+    box-shadow: 3px 3px 3px darkgrey;
 }
+
+.listContainer__delete-button {
+    display: flex;
+    cursor: pointer;
+    float: right;
+    font-size: 1.75rem;
+    padding: 0.5rem;
+    background-color: hsl(0, 0%, 98%);
+    outline: none;
+    color: hsl(8, 100%, 50%);
+    border: none;
+    
+}
+
+.listContainer__list-item input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* .listContainer__list-item::before {
+    content: '';
+    position: absolute;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: blue;
+} */
 
 .submit {
     display: block;
@@ -42,9 +70,11 @@ textarea {
     border-radius: 5px;
     cursor: pointer;
     outline: none;
-    /* background-color: hsl(218, 97%, 52%); */
+    background-color: hsl(0, 0%, 100%);
     color: hsl(218, 97%, 52%);
     border: 1px solid hsl(218, 97%, 52%) ;
+    margin: 0 auto;
+    margin-top: 1rem;
 }
 
 

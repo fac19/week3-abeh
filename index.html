@@ -20,17 +20,15 @@
             <button type="submit" class="submit" id="submit">Submit</button>
         </form>
 
-        <container id="container" class="listContainer">
-            <ul id="todoList" class="listContainer__list">
-
-            </ul>
-        </container>
+        <ul id="listContainer" class="listContainer">
+            
+        </ul>
 
           <template id="listItemTemplate">
               <li class="listContainer__list-item">
                     <input type="checkbox" name="checkboxFinished" id="checkboxFinished">
                     <label for="checkboxFinished" id="checkboxLabel"></label>
-                    <button id="deleteItem">&#128465;</button>
+                    <button id="deleteItem" class="listContainer__delete-button">&#128465;</button>
               </li>
           </template>
 

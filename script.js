@@ -15,6 +15,6 @@ function createListItemUsingTemplate(textAreaContent) {
 
     domFrag.querySelector("#checkboxLabel").textContent = textAreaContent;
 
-    document.getElementById("todoList").appendChild(domFrag);
+    document.getElementById("listContainer").appendChild(domFrag);
 }
 
