@@ -1,0 +1,45 @@
+As todo list user,
+I want to add items to my list,
+so view I can them.
+
+Scenario 1: User adds a new todo item.
+Given that a user types input 
+and submits,
+then new todo item is displayed on a page
+and input area cleared and on focus.
+
+
+As todo list user, 
+I want to check things off my list, 
+then see them crossed out/grayed out
+
+
+Scenario 2: User clicks on a todo li element
+When the user clicks on the element 
+then that item changes appearance to crossed out/grayed out
+
+
+As todo list user
+I want to delete items from my list
+and see them removed from the display
+
+Scenerio 3: User clicks delete button
+When a user clicks the delete button
+then the clicked li dissapears from the page
+
+
+-----------------------------------------------------------------------------------------
+
+Check that you have a value. 
+If I input an item and submit it. I want it to display on the list.
+If I input 3 items and submit them. I want it to display on the list in the order I submitted them (newest to oldest).
+
+Static testing
+
+Unit testing
+Check length of array for ul. For example if you add a item the list.length should be 1.
+Check what happens if input field is empty 
+Check what happens with different input types (?!*)
+
+
+Integration testing 
