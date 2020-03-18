@@ -10,14 +10,28 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body>
+<body id="wrapper">
     <main>
-      <form action="submit">
-        <label for="toDO">
-          <input type="text" name="toDo" id="toDo" required />
-        </label>
-        <button type="submit">Submit</button>
-      </form>
+        <form action="submit" id="toDoInput">
+            <label for="toDoInput">
+                <textarea id="textarea" name="toDoInput" id="toDoInput"></textarea>
+            </label>
+            <button type="submit" class="submit" id="submit">Submit</button>
+        </form>
+
+        <container id="container" class="listContainer">
+            <ul id="todoList" class="listContainer__list">
+
+            </ul>
+        </container>
+
+          <template id="listItemTemplate">
+              <li class="listContainer__list-item">
+                    <input type="checkbox" name="checkboxFinished" id="checkboxFinished">
+                    <label for="checkboxFinished" id="checkboxLabel"></label>
+                    <button id="deleteItem">&#128465;</button>
+              </li>
+          </template>
     </main>
   </body>
   <script src="script.js"></script>
