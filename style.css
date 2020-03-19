@@ -8,14 +8,9 @@
 main {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     height: 99vh;
     padding-top: 5%;
-}
-
-textarea {
-    /* width: 95vw; */
 }
 
 .listContainer  {
@@ -29,7 +24,6 @@ textarea {
     display: flex;
     flex-direction: row;
     width: 70vw;
-    /* border: 2px solid blue; */
     margin-top: 1rem;
     background-color: hsl(0, 0%, 98%);
     border-radius: 5px;
@@ -54,14 +48,6 @@ textarea {
     opacity: 0;
     cursor: pointer;
 }
-
-/* .listContainer__list-item::before {
-    content: '';
-    position: absolute;
-    height: 1.5rem;
-    width: 1.5rem;
-    background-color: blue;
-} */
 
 .submit {
     display: block;

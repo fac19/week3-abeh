@@ -1,22 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>ABEH TO-DO</title>
-  <meta name="description" content="A to-do list for all your tasks">
-  <meta name="author" content="SitePoint">
+  <head>
+    <meta charset="utf-8" />
+    <title>ABEH TO-DO</title>
+    <meta name="description" content="A to-do list for all your tasks" />
+    <meta name="author" content="SitePoint" />
 
-  <link rel="stylesheet" href="style.css">
-
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
 <body id="wrapper">
     <main>
-        <form action="submit" id="toDoInput">
-            <label for="toDoInput">
-                <textarea id="textarea" name="toDoInput" id="toDoInput"></textarea>
-            </label>
+        <form action="submit" id="toDo">
+            <label for="toDoInput"></label>
+            <textarea name="toDoInput" id="toDoInput"></textarea>
             <button type="submit" class="submit" id="submit">Submit</button>
         </form>
 
@@ -26,13 +24,14 @@
 
           <template id="listItemTemplate">
               <li class="listContainer__list-item">
-                    <input type="checkbox" name="checkboxFinished" id="checkboxFinished">
-                    <label for="checkboxFinished" id="checkboxLabel"></label>
-                    <button id="deleteItem" class="listContainer__delete-button">&#128465;</button>
+                    <input type="checkbox" name="itemCheckbox" class="itemCheckbox"> 
+                    <label for="itemCheckbox" class="itemCheckboxLabel"></label>
+                    <button class="listContainer__delete-button">&#128465;</button>
               </li>
           </template>
-
     </main>
-</body>
-<script src="script.js"></script>
+  </body>
+  <script src="script.js"></script>
+  <script src="test-helpers.js"></script>
+  <script src="index.test.js"></script>
 </html>
