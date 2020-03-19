@@ -117,7 +117,7 @@ function checkArrayLength (array, expectedLength, test) {
   // JS takes the input value
   // JS creates a template with a li, span, input, button
   // DOM manipulation li is appended to ul parent
-// });
+// });   
 
 // Integration test for calculator
 // test("Uppercase feature correctly changes the user's input and updates the page", t => {
@@ -129,3 +129,5 @@ function checkArrayLength (array, expectedLength, test) {
 //   t.equal(result.textContent, "HELLO WORLD"); // step 4
 //   result.textContent = ""; // reset so it doesn't affect the page/other tests
 // });
+
+
