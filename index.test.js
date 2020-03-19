@@ -26,9 +26,9 @@
   // JS takes the input value
   // JS creates a template with a li, span, input, button
   // DOM manipulation li is appended to ul parent
-// });
+// });   
 
-// // Integration test for calculator
+// // Integration test for calculator 
 // test("Uppercase feature correctly changes the user's input and updates the page", t => {
 //   const input = document.querySelector("input"); // step 1
 //   input.value = "hello world"; // step 2
