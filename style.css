@@ -1,4 +1,15 @@
 :root {
+  background: #e0eafc; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #cfdef3,
+    #e0eafc
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #cfdef3,
+    #e0eafc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 * {
@@ -52,6 +63,7 @@ main {
   margin-top: 0.5rem;
   border-radius: 5px;
   box-shadow: 3px 3px 3px darkgrey;
+  background-color: whitesmoke;
 }
 
 .listContainer__list-item:hover,
@@ -81,6 +93,19 @@ main {
   color: hsl(8, 100%, 50%);
   border: none;
 }
+
+.listContainer__delete-button:focus {
+  border: 2px solid blue;
+}
+
+#submit:hover, #submit:focus {
+  background-color: blanchedalmond;
+  transform: scale(1.1);
+}
+
+/* #submit:focus {
+  border-color:3px solid blue;
+} */
 
 .listContainer__delete-button:hover {
   transform: scale(0.9);
