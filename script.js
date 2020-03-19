@@ -27,7 +27,7 @@ submit.addEventListener("click", e => {
   let textAreaContent = toDoInput.value;
   createListItemUsingTemplate(textAreaContent);
   toDoInput.value = "";
-  // toDoInput.focus();
+  toDoInput.focus();
 });
 
 function createListItemUsingTemplate(textAreaContent) {
