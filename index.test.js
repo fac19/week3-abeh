@@ -119,13 +119,7 @@ function checkArrayLength (array, expectedLength, test) {
   // DOM manipulation li is appended to ul parent
 // });   
 
-<<<<<<< HEAD
-// // Integration test for calculator 
-||||||| a700bae
-// // Integration test for calculator
-=======
 // Integration test for calculator
->>>>>>> master
 // test("Uppercase feature correctly changes the user's input and updates the page", t => {
 //   const input = document.querySelector("input"); // step 1
 //   input.value = "hello world"; // step 2
