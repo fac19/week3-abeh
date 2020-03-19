@@ -14,32 +14,34 @@ function randomIndex(arrayLength) {
 
 // Test suite 1 - Check the input values render correctly on the webpage
 test("Check that input value correctly renders on the webpage", t => {
-  checkArrayValue(['Cheese', 'Ham', 'Fish', 'Potatoes'], 2, 'Fish', t);
-  checkArrayValue(['Cheese', 'Ham', 'Fish', 'Potatoes', 'Cheese', 'Ham', 'Fish', 'Potatoes'], 1, 'Fish', t);
+  checkArrayValue(['Cheese', 'Ham', 'Fish', 'Potatoes'], t);
+  checkArrayValue(['Cheese', 'Ham', 'Fish', 'Potatoes', 'Cheese', 'Ham', 'Fish', 'Potatoes'], t);
 });
 
-function checkArrayValue (array, index, expectedValue, test) {
+function checkArrayValue (array, test) {
   addListItemToDom(array);  
+  let index = randomIndex(array.length);
   const newList = document.querySelectorAll('.listContainer__list-item');
   const arrayResult = Array.from(newList);  
-  result = arrayResult[index].firstElementChild.nextElementSibling.textContent;  
-  const expected = expectedValue;
+  const result = arrayResult[index].firstElementChild.textContent; 
+  const expected = array[index];
   test.equal(result, expected, `List item at index ${index} expected to be ${expected} and it was ${result}`);
   let liNodes = document.querySelectorAll('li'); // This selects all of the li on the webpage
   liNodes.forEach(node => node.remove()); // This deletes all of the li on the webpage
 }
 
+
 // Test suite 2 - Check the to do list length renders correctly on the webpage
 test("Check that multiple user inputs correctly render on the webpage", t => {
-  checkArrayLength(['Cheese', 'Ham', 'Fish', 'Potatoes'], 4, t);
-  checkArrayLength(['Cheese', 'Ham', 'Fish', 'Potatoes', 'Fish', 'Potatoes', 'Steak'], 5, t);
+  checkArrayLength(['Cheese', 'Ham', 'Fish', 'Potatoes'], t);
+  checkArrayLength(['Cheese', 'Ham', 'Fish', 'Potatoes', 'Fish', 'Potatoes', 'Steak'], t);
 });
 
-function checkArrayLength (array, expectedLength, test) {
+function checkArrayLength (array, test) {
   addListItemToDom(array);
   let liNodes = document.querySelectorAll('li');
   const result = liNodes.length;
-  const expected = expectedLength;
+  const expected = array.length;
   test.equal(result, expected, `List length expected to be ${expected} and it was ${result}`);
   liNodes.forEach(node => node.remove());
 }
@@ -47,12 +49,13 @@ function checkArrayLength (array, expectedLength, test) {
 
 //Test Suite 3 - Check that clicking a delete button reduces the list length by one.
 test("Check that the list length decreases when the delete button is selected", t => {
-  checkListLength(['Cheese', 'Ham', 'Fish', 'Potatoes'], 2, t);
-  checkListLength(['Cheese', 'Ham', 'Fish', 'Potatoes', 'Fish', 'Potatoes', 'Steak'], 4, t)
+  checkListLength(['Cheese', 'Ham', 'Fish', 'Potatoes'], t);
+  checkListLength(['Cheese', 'Ham', 'Fish', 'Potatoes', 'Fish', 'Potatoes', 'Steak'], t)
 })
 
-function checkListLength(array, index, test) {
+function checkListLength(array, test) {
   addListItemToDom(array);
+  let index = randomIndex(array.length);
   let liNodes = document.querySelectorAll('li');
   const firstList = document.querySelectorAll('.listContainer__list-item');
   const arrayResult = Array.from(firstList); 
@@ -67,11 +70,12 @@ function checkListLength(array, index, test) {
 
 // Test Suite 4 - Check the delete button removes the indexed list item from the list and the index now relates to the next item in line.
 test("Check that the delete button removes the selected element", t => {
-  correctElementDeleted(['Cheese', 'Ham', 'Fish', 'Potatoes'], 2, t);
+  correctElementDeleted(['Cheese', 'Ham', 'Fish', 'Potatoes'], t);
 })
 
-function correctElementDeleted(array, index, test) {
+function correctElementDeleted(array, test) {
   addListItemToDom(array);
+  let index = randomIndex(array.length);
   let liNodes = document.querySelectorAll('li');
   const newList = document.querySelectorAll('.listContainer__list-item');
   const arrayResult = Array.from(newList);
@@ -101,11 +105,10 @@ function classListAdded(array, test){
   const expected = true
   test.equal(result, expected, `Class list check status ${result} should be ${expected}`)
   liNodes.forEach(node => node.remove());
+
 }
 
-
-
-
+  
 
 
 
