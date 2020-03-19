@@ -14,8 +14,10 @@
     <main>
       <h1>To Do List</h1>
         <form action="submit" id="toDo">
-            <label for="toDoInput"></label>
-            <input name="toDoInput" id="toDoInput" placeholder="What do you need to do?"></input>
+            <label for="toDoInput">
+              <input aria-label="Input your to do list item" name="toDoInput" id="toDoInput" placeholder="What do you need to do?"></input>
+            </label>
+            
             <button type="submit" class="submit" id="submit">Add item to list</button>
         </form>
 
@@ -25,9 +27,9 @@
 
           <template id="listItemTemplate">
               <li class="listContainer__list-item">
-                <label for="itemCheckbox" class="itemCheckboxLabel"></label>
-                <input type="checkbox" name="itemCheckbox" class="itemCheckbox"> 
-                <button class="listContainer__delete-button">&#128465;</button>
+                <label for="itemCheckbox" class="itemCheckboxLabel" tabindex="0"></label>
+                <input type="checkbox" name="itemCheckbox" class="itemCheckbox" tabindex="-1"> 
+                <button class="listContainer__delete-button" tabindex="0">&#128465;</button>
               </li>
           </template>
     </main>
