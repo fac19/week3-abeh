@@ -1,98 +1,127 @@
 :root {
-    
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 99vh;
-    padding-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 99vh;
+  padding-top: 5%;
 }
 
 .submit {
-    display: block;
-    font-size: 1.5rem;
-    padding: 0.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    outline: none;
-    background-color: hsl(0, 0%, 100%);
-    color: hsl(218, 97%, 52%);
-    border: 1px solid hsl(218, 97%, 52%) ;
-    margin: 0 auto 1.5rem auto;
-    margin-top: 1rem;
+  display: block;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(218, 97%, 52%);
+  border: 1px solid hsl(218, 97%, 52%);
+  margin: 0 auto 1.5rem auto;
+  margin-top: 1rem;
 }
 
-.listContainer  {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
+.listContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
 
 .listContainer__list-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.5rem;
-    flex-direction: row;
-    width: 70vw;
-    margin-top: 0.5rem;
-    border-radius: 5px;
-    box-shadow: 3px 3px 3px  darkgrey;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  flex-direction: row;
+  width: 70vw;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px darkgrey;
+}
+
+.listContainer__list-item:hover,
+.itemCheckboxLabel:hover {
+  cursor: pointer;
+  background-color: blanchedalmond;
 }
 
 .listContainer__list-item:hover {
-    box-shadow: 5px 5px 5px  darkgrey
+  box-shadow: 5px 5px 5px darkgrey;
 }
 
 .itemCheckboxLabel {
-    width: 80%;
-    overflow-wrap: break-word;
-    padding-left: 5%;
+  width: 80%;
+  overflow-wrap: break-word;
+  padding-left: 5%;
 }
 
 .listContainer__delete-button {
-    display: flex;
-    cursor: pointer;
-    float: right;
-    font-size: 1.75rem;
-    padding: 0.5rem;
-    background-color: hsl(0, 0%, 100%);
-    outline: none;
-    color: hsl(8, 100%, 50%);
-    border: none;
+  display: flex;
+  cursor: pointer;
+  float: right;
+  font-size: 1.75rem;
+  padding: 0.5rem;
+  background-color: hsl(0, 0%, 100%);
+  outline: none;
+  color: hsl(8, 100%, 50%);
+  border: none;
+}
+
+.listContainer__delete-button:hover {
+  transform: scale(0.9);
+  background-color: blanchedalmond;
 }
 
 .listContainer__list-item input {
+<<<<<<< HEAD
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  transition: 0.2s linear;
+}
+
+.checked {
+  text-decoration: line-through;
+=======
     position: absolute;
     cursor: pointer;
-    /* opacity: 0; */
+    opacity: 0;
     width: 1.2rem;
     height: 1.2rem;
 }
 
 .checked {
     text-decoration: line-through;
+    opacity: 0.6;
+>>>>>>> master
 }
 
-/* .customCheckbox {
-    position: absolute;
-    cursor: pointer;
-    position: absolute;
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: hsl(0,0%,96%);
-    outline: none;
+@media only screen and (max-width: 500px){
+    .submit {
+        width: 18rem;
+        height: 5rem;
+        font-size: 2.5rem;
+    }
+
+    .listContainer__list-item {
+        height: 10vw;
+    }
 }
 
+<<<<<<< HEAD
 .itemCheckbox:checked ~ .customCheckbox {
     background-color: hsl(218, 97%, 52%);
 } */
+=======
+>>>>>>> master
