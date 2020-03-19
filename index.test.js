@@ -42,36 +42,42 @@ function checkArrayLength (array, expectedLength, test) {
 
 //Test Suite 3 - Check that clicking a delete button reduces the list length by one.
 test("Check that the list length decreases when the delete button is selected", t => {
-  checkListLength(['Cheese', 'Ham', 'Fish', 'Potatoes'], 2, 3, t);
+  checkListLength(['Cheese', 'Ham', 'Fish', 'Potatoes'], 2, t);
+  checkListLength(['Cheese', 'Ham', 'Fish', 'Potatoes', 'Fish', 'Potatoes', 'Steak'], 4, t)
 })
 
-function checkListLength(array, index, expectedLength, test) {
+function checkListLength(array, index, test) {
   addListItemToDom(array);
   let liNodes = document.querySelectorAll('li');
-  
   const firstList = document.querySelectorAll('.listContainer__list-item');
-  const arrayResult = Array.from(firstList);  
-  const deleteButton = arrayResult[index].lastElementChild;  
-  
-  deleteButton.click();
-
+  const arrayResult = Array.from(firstList); 
+  arrayResult[index].lastElementChild.click();
   const secondList = document.querySelectorAll('.listContainer__list-item');
   const secondArray = Array.from(secondList);
-
-  const result = secondArray.length;
-  
-  // const result = liNodes.length;
-  console.log(result);
-  
-  const expected = expectedLength;
-
-
-  test.equal(result, expected, `List length expected to decrease from ${array.length} to ${expectedLength}. List length is ${result}`);
+  const result = secondArray.length;  
+  const expected = array.length-1;
+  test.equal(result, expected, `List length expected to decrease from ${array.length} to ${expected}. List length is ${result}`);
   liNodes.forEach(node => node.remove());
 }
 
-//Test Suite 4 - Check the delete button removes the indexed list item from the list.
+// Test Suite 4 - Check the delete button removes the indexed list item from the list and the index now relates to the next item in line.
+test("Check that the delete button removes the selected element", t => {
+  correctElementDeleted(['Cheese', 'Ham', 'Fish', 'Potatoes'], 2, t);
+})
 
+function correctElementDeleted(array, index, test) {
+  addListItemToDom(array);
+  let liNodes = document.querySelectorAll('li');
+  const newList = document.querySelectorAll('.listContainer__list-item');
+  const arrayResult = Array.from(newList);
+  arrayResult[index].lastElementChild.click();
+  const secondList = document.querySelectorAll('.listContainer__list-item');
+  const secondArray = Array.from(secondList);
+  const result =  secondArray[index].children[0].textContent
+  const expected = arrayResult[index+1].children[0].textContent;
+  test.equal(result, expected, `List item ${result} expected to equal list item ${expected}`)
+  liNodes.forEach(node => node.remove());
+}
 
 
 
