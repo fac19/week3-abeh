@@ -7,14 +7,39 @@ function addListItemToDom(list) {
 }
 // addListItemToDom(['Cheese', 'Ham', 'Fish', 'Potatoes']);
 
-test("Check that first user input correctly renders on the webpage", t => {
-  addListItemToDom(['Walk my cat']);
-  const firstListItemText = document.querySelector('.itemCheckboxLabel').textContent;
-  t.equal(firstListItemText, "Walk my cat");
-  toDoInput.value = "";
-  const firstListItem = document.querySelector('.listContainer__list-item')
-  firstListItem.remove();
+// test("Check that input value correctly renders on the webpage", t => {
+//   addListItemToDom(['Walk my cat']);
+//   const firstListItemText = document.querySelector('.itemCheckboxLabel').textContent;
+//   t.equal(firstListItemText, "Walk my cat");
+//   toDoInput.value = "";
+//   const firstListItem = document.querySelector('.listContainer__list-item')
+//   firstListItem.remove();
+// });
+
+test("Check that input value correctly renders on the webpage", t => {
+  checkArrayValue(['Cheese', 'Ham', 'Fish', 'Potatoes'], 2, 'Fish', t);
 });
+
+function checkArrayValue (array, index, expectedValue, test) {
+  addListItemToDom(array);
+  let liNodes = document.querySelectorAll('li'); // This selects all of the li on the webpage
+  const newList = document.querySelectorAll('.itemCheckboxLabel');
+  const arrayResult = [];
+  for (let i = 0; i < newList.length; i++) {
+    arrayResult[i] =  newList[i].value;
+  }
+  
+  console.log(newList);
+  // const arrayResult = Array.from(newList);
+  console.log(arrayResult);
+  result = arrayResult[index];
+  console.log(result);
+
+  
+  const expected = expectedValue;
+  test.equal(result, expected, `List item at index ${index} expected to be ${expected} and it was ${result}`);
+  liNodes.forEach(node => node.remove()); // This deletes all of the li on the webpage
+}
 
 test("Check that multiple user inputs correctly render on the webpage", t => {
   checkArrayLength(['Cheese', 'Ham', 'Fish', 'Potatoes'], 4, t);
@@ -30,14 +55,14 @@ function checkArrayLength (array, expectedLength, test) {
   liNodes.forEach(node => node.remove());
 }
 
-test("Check that multiple user inputs correctly render on the webpage", t => {
-  addListItemToDom(['Cheese', 'Ham', 'Fish', 'Potatoes']);
-  let liNodes = document.querySelectorAll('li');
-  const result = document.querySelectorAll('li').length;
-  const expected = 4;
-  t.equal(result, expected, `List length expected to be ${expected} and it was ${result}`);
-  liNodes.forEach(node => node.remove());
-});
+// test("Check that multiple user inputs correctly render on the webpage", t => {
+//   addListItemToDom(['Cheese', 'Ham', 'Fish', 'Potatoes']);
+//   let liNodes = document.querySelectorAll('li');
+//   const result = document.querySelectorAll('li').length;
+//   const expected = 4;
+//   t.equal(result, expected, `List length expected to be ${expected} and it was ${result}`);
+//   liNodes.forEach(node => node.remove());
+// });
 
 
 
