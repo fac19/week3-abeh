@@ -16,7 +16,6 @@ listContainer.addEventListener('click', (event) => {
         } else if (!checkbox.checked){
             checkbox.checked = true;
             label.classList.add('checked')
-            
         }
     }
 })
