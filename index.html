@@ -6,16 +6,17 @@
     <title>ABEH TO-DO</title>
     <meta name="description" content="A to-do list for all your tasks" />
     <meta name="author" content="SitePoint" />
-
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
   </head>
 
 <body id="wrapper">
     <main>
+      <h1>To Do List</h1>
         <form action="submit" id="toDo">
             <label for="toDoInput"></label>
-            <textarea name="toDoInput" id="toDoInput" placeholder="What do you need to do?"></textarea>
-            <button type="submit" class="submit" id="submit">Submit</button>
+            <input name="toDoInput" id="toDoInput" placeholder="What do you need to do?"></input>
+            <button type="submit" class="submit" id="submit">Add item to list</button>
         </form>
 
         <ul id="listContainer" class="listContainer">
