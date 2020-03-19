@@ -7,15 +7,16 @@ listContainer.addEventListener('click', (event) => {
     if (event.target.className === 'listContainer__delete-button'){
         event.target.parentNode.remove()
     }
-    if (event.target.className === 'itemCheckboxLabel'){
+    if (event.target.classList.contains('itemCheckboxLabel') ){
         let label = event.target.parentNode.children[0]
         let checkbox = event.target.parentNode.children[1]
         if (checkbox.checked){
-            label.classList.remove('checked')
             checkbox.checked = false;
+            label.classList.remove('checked')
         } else if (!checkbox.checked){
-            label.classList.add('checked')
             checkbox.checked = true;
+            label.classList.add('checked')
+            
         }
     }
 })
