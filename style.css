@@ -82,18 +82,6 @@ main {
 }
 
 .listContainer__list-item input {
-<<<<<<< HEAD
-  position: absolute;
-  cursor: pointer;
-  opacity: 0;
-  width: 1.2rem;
-  height: 1.2rem;
-  transition: 0.2s linear;
-}
-
-.checked {
-  text-decoration: line-through;
-=======
     position: absolute;
     cursor: pointer;
     opacity: 0;
@@ -104,7 +92,6 @@ main {
 .checked {
     text-decoration: line-through;
     opacity: 0.6;
->>>>>>> master
 }
 
 @media only screen and (max-width: 500px){
@@ -119,9 +106,3 @@ main {
     }
 }
 
-<<<<<<< HEAD
-.itemCheckbox:checked ~ .customCheckbox {
-    background-color: hsl(218, 97%, 52%);
-} */
-=======
->>>>>>> master
