@@ -39,7 +39,35 @@ function checkArrayLength (array, expectedLength, test) {
   liNodes.forEach(node => node.remove());
 }
 
+//Test Suite 3 - Check the delete button removes the list item from the list
+test("Check that the list length decreases when the delete button is selected", t => {
+  checkListLength(['Cheese', 'Ham', 'Fish', 'Potatoes'], 3, t);
+})
 
+function checkListLength(array, expectedLength, test) {
+  addListItemToDom(array);
+  let liNodes = document.querySelectorAll('li');
+  
+  const firstList = document.querySelectorAll('.listContainer__list-item');
+  const arrayResult = Array.from(firstList);  
+  const deleteButton = arrayResult[0].lastElementChild;  
+  
+  deleteButton.click();
+
+  const secondList = document.querySelectorAll('.listContainer__list-item');
+  const secondArray = Array.from(secondList);
+
+  const result = secondArray.length;
+  
+  // const result = liNodes.length;
+  console.log(result);
+  
+  const expected = expectedLength;
+
+
+  test.equal(result, expected, `List length expected to decrease from ${array.length} to ${expectedLength}`)
+  liNodes.forEach(node => node.remove());
+}
 
 
 
