@@ -3,8 +3,14 @@
 
 * {
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 main {
@@ -17,8 +23,8 @@ main {
 
 .submit {
   display: block;
-  font-size: 1.5rem;
-  padding: 0.5rem;
+  font-size: 1rem;
+  padding: 0.25rem;
   border-radius: 5px;
   cursor: pointer;
   outline: none;
@@ -105,4 +111,7 @@ main {
         height: 10vw;
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
