@@ -8,8 +8,9 @@ function addListItemToDom(list) {
 }
 
 function randomIndex(arrayLength) {
- return Math.floor(Math.random() * arrayLength);
-}
+  return Math.floor(Math.random() * arrayLength);
+ }
+ 
 
 // Test suite 1 - Check the input values render correctly on the webpage
 test("Check that input value correctly renders on the webpage", t => {
@@ -88,27 +89,26 @@ function correctElementDeleted(array, test) {
 }
 
 // Test Suite 5 - Check the checked button adds a class to the clicked list item
-  test("Check the checked function can add a class to the list item", t =>{
-    classListAdded(['Cheese', 'Ham', 'Fish', 'Potatoes'], 2, t)
-  })
+test("Check the checked function can add a class to the list item", t =>{
+  classListAdded(['Cheese', 'Ham', 'Fish', 'Potatoes'], t)
+})
 
-  function classListAdded(array, index, test){
-    addListItemToDom(array);
-    let liNodes = document.querySelectorAll('li');
-    let list
-    const listItem = document.querySelectorAll('.listContainer__list-item');
-    const listArray = Array.from(listItem);
-    listArray[index].children[0].click()
-    const result = listArray[index].classList.contains('checked')
-    const expected = true
-    test.equal(result, expected, `Class list ${result} should be ${expected}`)
+function classListAdded(array, test){
+  addListItemToDom(array);
+  let index = randomIndex(array.length)
+  let liNodes = document.querySelectorAll('li');
+  const listItem = document.querySelectorAll('.listContainer__list-item');
+  const listArray = Array.from(listItem);
+  let labelOfIndex = listArray[index].children[0]
+  labelOfIndex.click()
+  const result = labelOfIndex.classList.contains('checked')
+  const expected = true
+  test.equal(result, expected, `Class list check status ${result} should be ${expected}`)
+  liNodes.forEach(node => node.remove());
 
-    console.log(listArray[index].children[0])
+}
 
-
-    // liNodes.forEach(node => node.remove());
-  }
-
+  
 
 
 
