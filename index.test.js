@@ -100,11 +100,7 @@ function classListAdded(array, test){
   const result = labelOfIndex.classList.contains('checked')
   const expected = true
   test.equal(result, expected, `Class list check status ${result} should be ${expected}`)
-
-  console.log(listArray[index].children[0])
-
-
-  // liNodes.forEach(node => node.remove());
+  liNodes.forEach(node => node.remove());
 }
 
 
