@@ -23,8 +23,10 @@ listContainer.addEventListener("click", event => {
 
 submit.addEventListener("click", e => {
   e.preventDefault();
-  var textAreaContent = toDoInput.value;
+  if (!toDoInput.value) return;
+  let textAreaContent = toDoInput.value;
   createListItemUsingTemplate(textAreaContent);
+  toDoInput.value = "";
 });
 
 function createListItemUsingTemplate(textAreaContent) {
