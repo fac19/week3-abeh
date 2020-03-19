@@ -7,6 +7,7 @@ listContainer.addEventListener("click", event => {
   if (event.target.className === "listContainer__delete-button") {
     event.target.parentNode.remove();
   }
+
   if (event.target.classList.contains("itemCheckboxLabel")) {
     let label = event.target.parentNode.children[0];
     let checkbox = event.target.parentNode.children[1];

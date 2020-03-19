@@ -14,7 +14,7 @@
     <main>
         <form action="submit" id="toDo">
             <label for="toDoInput"></label>
-            <textarea name="toDoInput" id="toDoInput"></textarea>
+            <textarea name="toDoInput" id="toDoInput" placeholder="What do you need to do?"></textarea>
             <button type="submit" class="submit" id="submit">Submit</button>
         </form>
 
@@ -25,9 +25,8 @@
           <template id="listItemTemplate">
               <li class="listContainer__list-item">
                 <label for="itemCheckbox" class="itemCheckboxLabel"></label>
-                <input type="checkbox" name="itemCheckbox" class="itemCheckbox">
-                    <span class="customCheckbox"></span> 
-                    <button class="listContainer__delete-button">&#128465;</button>
+                <input type="checkbox" name="itemCheckbox" class="itemCheckbox"> 
+                <button class="listContainer__delete-button">&#128465;</button>
               </li>
           </template>
     </main>
