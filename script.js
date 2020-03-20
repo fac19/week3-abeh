@@ -46,7 +46,7 @@ function deleteItem(e) {
   }
 }
 
-// Check and uncheck item funtion
+// Check and uncheck item function
 function checkOrUncheckItem(e) {
   if (e.target.classList.contains("itemCheckboxLabel")) {
     let label = e.target.parentNode.children[0];
@@ -56,11 +56,15 @@ function checkOrUncheckItem(e) {
       checkbox.checked = false;
       label.classList.remove("checked");
       arrayFilter("checked", false);
+      // Set aria-checked to false
+      label.setAttribute('aria-checked', 'false');
       // check
     } else if (!checkbox.checked) {
       checkbox.checked = true;
       label.classList.add("checked");
       arrayFilter("checked", true);
+      // Set aria-checked to true
+      label.setAttribute('aria-checked', 'true');
     }
   }
 }
