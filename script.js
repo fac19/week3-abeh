@@ -2,13 +2,14 @@ const submit = document.querySelector("#submit");
 const toDoInput = document.querySelector("#toDoInput");
 const template = document.querySelector("#listItemTemplate");
 const listContainer = document.getElementById("listContainer");
+const searchBar = document.querySelector(".searchInput");
 // Fetch data from local storage or generate empty array
 let todoArray = localStorage.getItem("list")
   ? JSON.parse(localStorage.getItem("list"))
   : [];
 // Append todos from local storage
 todoArray.forEach(todo => {
-  createListItemUsingTemplate(todo);
+  createListItemsFromLocalStorage(todo);
 });
 
 // Manage list items with a keyboard
@@ -80,11 +81,17 @@ submit.addEventListener("click", e => {
 });
 // Append todo onto the list
 function createListItemUsingTemplate(textAreaContent) {
-  const docFrag = template.content.cloneNode(true);
-  docFrag.querySelector(".itemCheckboxLabel").textContent =
-    textAreaContent.name || textAreaContent;
+  let docFrag = template.content.cloneNode(true);
+  docFrag.querySelector(".itemCheckboxLabel").textContent = textAreaContent;
+  listContainer.appendChild(docFrag);
+}
+
+// generate todos using local storage
+function createListItemsFromLocalStorage(obj) {
+  let docFrag = template.content.cloneNode(true);
+  docFrag.querySelector(".itemCheckboxLabel").textContent = obj.name;
   // check if item has been checked
-  if (textAreaContent.checked) {
+  if (obj.checked) {
     docFrag.querySelector(".itemCheckbox").checked = true;
     docFrag.querySelector(".itemCheckboxLabel").classList.add("checked");
   }
