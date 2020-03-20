@@ -32,6 +32,9 @@ main {
   padding-top: 5%;
 }
 
+.toDoInput__input {
+  width: 30vw;
+}
 .submit {
   display: block;
   font-size: 1rem;
@@ -44,6 +47,7 @@ main {
   border: 1px solid hsl(218, 97%, 52%);
   margin: 0 auto 1.5rem auto;
   margin-top: 1rem;
+  width: 30vw;
 }
 
 .listContainer {
@@ -51,6 +55,7 @@ main {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  transition: 0.5s ease-in-out;
 }
 
 .listContainer__list-item {
@@ -59,11 +64,12 @@ main {
   align-items: center;
   font-size: 1.5rem;
   flex-direction: row;
-  width: 70vw;
+  width: 50vw;
   margin-top: 0.5rem;
   border-radius: 5px;
   box-shadow: 3px 3px 3px darkgrey;
   background-color: whitesmoke;
+  transition: 0.1s ease-in-out;
 }
 
 .listContainer__list-item:hover,
@@ -80,6 +86,12 @@ main {
   width: 80%;
   overflow-wrap: break-word;
   padding-left: 5%;
+  transition: 0.1s ease-in-out;
+}
+
+.itemCheckboxLabel:focus {
+  border: 2px solid blue;
+  background-color: blanchedalmond;
 }
 
 .listContainer__delete-button {
@@ -92,51 +104,71 @@ main {
   outline: none;
   color: hsl(8, 100%, 50%);
   border: none;
+  transition: 0.3s ease-in-out;
 }
 
 .listContainer__delete-button:focus {
   border: 2px solid blue;
+  background-color: blanchedalmond;
 }
 
-#submit:hover, #submit:focus {
+#submit:hover,
+#submit:focus {
   background-color: blanchedalmond;
   transform: scale(1.1);
+  transition: 0.1s ease-in-out;
 }
 
-/* #submit:focus {
-  border-color:3px solid blue;
-} */
+.listContainer__list-item input {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+}
 
 .listContainer__delete-button:hover {
   transform: scale(0.9);
   background-color: blanchedalmond;
 }
 
-.listContainer__list-item input {
-    position: absolute;
-    cursor: pointer;
-    opacity: 0;
-    width: 1.2rem;
-    height: 1.2rem;
-}
-
 .checked {
-    text-decoration: line-through;
-    opacity: 0.6;
+  text-decoration: line-through;
+  opacity: 0.6;
+  transition: 0.5s ease-in-out;
 }
 
-@media only screen and (max-width: 500px){
-    .submit {
-        width: 18rem;
-        height: 5rem;
-        font-size: 2.5rem;
-    }
+@media only screen and (max-width: 500px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .submit {
+    width: 80vw;
+    font-size: 1.2rem;
+  }
 
-    .listContainer__list-item {
-        height: 10vw;
-    }
+  .listContainer__list-item {
+    width: 80vw;
+    font-size: 1.2rem;
+  }
+
+  .toDoInput__input {
+    width: 80vw;
+  }
+  .listContainer__delete-button {
+    font-size: 1.2rem;
+  }
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> master
+@media only screen and (max-width: 860px) {
+  .submit {
+    width: 70vw;
+  }
+
+  .listContainer__list-item {
+    width: 70vw;
+  }
+  .toDoInput__input {
+    width: 70vw;
+  }
+}
