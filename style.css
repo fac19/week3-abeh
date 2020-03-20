@@ -10,6 +10,10 @@
     #cfdef3,
     #e0eafc
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  --button-blue:  hsl(218, 97%, 52%);
+  --background-white:  hsl(0, 0%, 100%);
+  --shadow-grey: hsl(0, 0%, 66%);
+  --blanchedalmond: hsl(36, 100%, 90%)
 }
 
 * {
@@ -42,9 +46,9 @@ main {
   border-radius: 5px;
   cursor: pointer;
   outline: none;
-  background-color: hsl(0, 0%, 100%);
-  color: hsl(218, 97%, 52%);
-  border: 1px solid hsl(218, 97%, 52%);
+  background-color: var(--background-white);
+  color: var(--button-blue);
+  border: 1px solid var(--button-blue);
   margin: 0 auto 1.5rem auto;
   margin-top: 1rem;
   width: 30vw;
@@ -67,7 +71,7 @@ main {
   width: 50vw;
   margin-top: 0.5rem;
   border-radius: 5px;
-  box-shadow: 3px 3px 3px darkgrey;
+  box-shadow: 3px 3px 3px var(--shadow-grey);
   background-color: whitesmoke;
   transition: 0.1s ease-in-out;
 }
@@ -75,11 +79,11 @@ main {
 .listContainer__list-item:hover,
 .itemCheckboxLabel:hover {
   cursor: pointer;
-  background-color: blanchedalmond;
+  background-color: var(--blanchedalmond);
 }
 
 .listContainer__list-item:hover {
-  box-shadow: 5px 5px 5px darkgrey;
+  box-shadow: 5px 5px 5px var(--shadow-grey);
 }
 
 .itemCheckboxLabel {
@@ -90,8 +94,8 @@ main {
 }
 
 .itemCheckboxLabel:focus {
-  border: 2px solid blue;
-  background-color: blanchedalmond;
+  border: 2px solid var(--button-blue);
+  background-color: var(--blanchedalmond);
 }
 
 .listContainer__delete-button {
@@ -100,7 +104,7 @@ main {
   float: right;
   font-size: 1.75rem;
   padding: 0.5rem;
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--background-white);
   outline: none;
   color: hsl(8, 100%, 50%);
   border: none;
@@ -108,13 +112,13 @@ main {
 }
 
 .listContainer__delete-button:focus {
-  border: 2px solid blue;
-  background-color: blanchedalmond;
+  border: 2px solid var(--button-blue);
+  background-color: var(--blanchedalmond);
 }
 
 #submit:hover,
 #submit:focus {
-  background-color: blanchedalmond;
+  background-color: var(--blanchedalmond);
   transform: scale(1.1);
   transition: 0.1s ease-in-out;
 }
@@ -129,7 +133,7 @@ main {
 
 .listContainer__delete-button:hover {
   transform: scale(0.9);
-  background-color: blanchedalmond;
+  background-color: var(--blanchedalmond);
 }
 
 .checked {
