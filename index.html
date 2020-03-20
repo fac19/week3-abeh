@@ -27,8 +27,7 @@
 
           <template id="listItemTemplate">
               <li class="listContainer__list-item">
-                <label for="itemCheckbox" class="itemCheckboxLabel" tabindex="0"></label>
-                <input type="checkbox" name="itemCheckbox" class="itemCheckbox" tabindex="-1"> 
+                <label role="checkbox" aria-checked="false" for="itemCheckbox" class="itemCheckboxLabel" tabindex="0"></label> 
                 <button class="listContainer__delete-button" tabindex="0">&#128465;</button>
               </li>
           </template>
