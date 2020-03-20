@@ -67,17 +67,19 @@ function checkOrUncheckItem(e) {
 
 // Submit todo item
 submit.addEventListener("click", e => {
-  e.preventDefault();
-  if (!toDoInput.value) return;
-  let textAreaContent = toDoInput.value;
-  createListItemUsingTemplate(textAreaContent);
-  //   local storage logic
-  let todo = {};
-  todo.name = textAreaContent;
-  todoArray.push(todo);
-  localStorage.setItem("list", JSON.stringify(todoArray));
-  toDoInput.value = "";
-  toDoInput.focus();
+  if (toDoInput.value !== '') {
+    e.preventDefault();
+    let textAreaContent = toDoInput.value;
+    createListItemUsingTemplate(textAreaContent);
+    //   local storage logic
+    let todo = {};
+    todo.name = textAreaContent;
+    todoArray.push(todo);
+    localStorage.setItem("list", JSON.stringify(todoArray));
+    toDoInput.value = "";
+    toDoInput.focus();
+  };   
+  
 });
 // Append todo onto the list
 function createListItemUsingTemplate(textAreaContent) {
